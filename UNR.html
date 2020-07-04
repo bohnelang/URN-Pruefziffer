@@ -1,0 +1,48 @@
+<html>
+<head>
+<title> URB-Berechung in HTML-Seiten per JavaScript>/titl>
+</head>
+<body>
+<h3> URN checksum calculation</h3>
+<script language="javascript" type="text/javascript">
+function calc_urn_checksum(test_urn)
+{
+        //var test_urn='urn:nbn:de:hbz:79pbc-201405121';
+        var code='3947450102030405060708094117############1814191516212223242542262713282931123233113435363738########43';
+        for(var i=0,sum=0,pos=1; i<test_urn.length;i++){
+                var x=test_urn.toUpperCase().charCodeAt(i)-45;
+                var v1= code.substr(x*2,1);
+                var v2= code.substr(x*2+1,1);
+                sum += (v1==0)?v2*pos++:pos++*v1+v2*pos++;
+        }
+        return Math.floor(sum/v2) % 10;
+}
+
+function checkform(ff)
+{
+
+        ff.p.value="";
+        var totest=ff.urn.value.substr(0,ff.urn.value.length-1);
+        var top=ff.urn.value.substr(ff.urn.value.length-1,1);
+        var p=calc_urn_checksum(totest);
+        ff.p.value=p;
+        if(top==p){ document.getElementById("tcol").bgColor="#00FF00";} else { document.getElementById("tcol").bgColor="#FF0000";}
+}
+
+</script>
+<table>
+<tbody>
+<tr>
+<td id="tcol">
+<form>
+<input type=text name="urn" size=35 value=""> <input type=text name="p" size=2 value="">
+<input type=button name=check value="Example" onclick="javascript:this.form.urn.value='urn:nbn:de:0183-mbi0003721'; this.form.p.value=''; return true ">
+<input type=button name=check value="Check" onclick="javascript:checkform(this.form); return true "><input type=button name=check value="Resolve" onclick="javascript:window.open('https://nbn-resolving.org/resolver?identifier='+this.form.urn.value+'&verb=full','_blank'); return true ">
+<input type=button name=check value="Clear" onclick="javascript:this.form.urn.value=''; this.form.p.value='';document.getElementById('tcol').bgColor='#FFF';return true ">
+</form>
+</td>
+</tr>
+</tbody>
+</table> 
+<body>
+</html>
