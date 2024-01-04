@@ -92,9 +92,9 @@ Nach der Zeichensubstitution kann die Prüfziffer errechnet werden.
 Der Algorithmus von mir setzt auf die ASCII-Reihenfolge und somit auf eine Verweis-auf-Verweis Auflösung:
 
 
--   .  /  0  1  2  3  4  5  6  7  8  9  : [ Toter Bereich ]  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z              _
-39 47 45 01 02 03 04 05 06 07 08 09 41 17 ## ## ## ## ## ## 18 14 19 15 16 21 22 23 24 25 42 26 27 13 28 29 31 12 32 33 11 34 35 36 37 38 ## ## ## ## 43
-
+ASCII Zeichen : -  .  /  0  1  2  3  4  5  6  7  8  9  : [ Toter Bereich ]  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z              _
+ASCII Wert Dez:45 46 47 48 49 50 51 52 53 54 55 56 57 58                   65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90             95
+URN Value     :39 47 45 01 02 03 04 05 06 07 08 09 41 17 ## ## ## ## ## ## 18 14 19 15 16 21 22 23 24 25 42 26 27 13 28 29 31 12 32 33 11 34 35 36 37 38 ## ## ## ## 43
 
 	
 Beispiel: urn:nbn:de:0183-mbi0003721 - hierbei ist die Prüfziffer 1
