@@ -91,8 +91,9 @@ Nach der Zeichensubstitution kann die Prüfziffer errechnet werden.
 
 Der Algorithmus von mir setzt auf die ASCII-Reihenfolge und somit auf eine Verweis-auf-Verweis Auflösung:
 
+
+-   .  /  0  1  2  3  4  5  6  7  8  9  : [ Toter Bereich ]  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z              _
 39 47 45 01 02 03 04 05 06 07 08 09 41 17 ## ## ## ## ## ## 18 14 19 15 16 21 22 23 24 25 42 26 27 13 28 29 31 12 32 33 11 34 35 36 37 38 ## ## ## ## 43
--   .  /  0  1  2  3  4  5  6  7  8  9  : [ Toter Bereich ]  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z              _ 
 
 
 	
