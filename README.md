@@ -105,8 +105,8 @@ R -> 1,2 ->> 1 *  3 =  3
 N -> 1,3 ->> 1 *  5 =  5
              3 *  6 = 18	
 [...]
-2 ->   3 --> 3 * 29 = 87 
-		            ------
+2 ->   3 --> 3 * 29 = 87
+                   ------
                     2855
 
 		Zum Ende die Summe durch 3 teilen (letzte Wert) und hiervon die Einerstelle verwenden. 	
