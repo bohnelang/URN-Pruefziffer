@@ -33,3 +33,85 @@ function calc_urn_checksum(test_urn)
 }
 ```
 
+
+Der Algorithmus ist hier sehr gut beschrieben: [http://www.pruefziffernberechnung.de/U/URN.shtml](http://www.pruefziffernberechnung.de):
+
+```
+
+Umsetzungstabelle Buchstaben und Zahlen nach Zahlen (festgelegt)
+
+0 -> 1
+1 -> 2
+2 -> 3
+3 -> 4
+4 -> 5
+5 -> 6
+6 -> 7
+7 -> 8
+8 -> 9
+9 -> 4,1
+	
+A -> 1,8
+B -> 1,4
+C -> 1,9
+D -> 1,5
+E -> 1,6
+F -> 2,1
+G -> 2,2
+H -> 2,3
+I -> 2,4
+J -> 2,5
+	
+K -> 4,2
+L -> 2,6
+M -> 2,7
+N -> 1,3
+O -> 2,8
+P -> 2,9
+Q -> 3,1
+R -> 1,2
+S -> 3,2
+T -> 3,3
+	
+U -> 1,1
+V -> 3,4
+W -> 3,5
+X -> 3,6
+Y -> 3,7
+Z -> 3,8
+- -> 3,9
+: -> 1,7
+
+Nach der Zeichensubstitution kann die Prüfziffer errechnet werden.
+
+    Alle Ziffern werden von links nach rechts, beginnend mit der ersten Ziffer, mit ihrer Position in der Ziffernfolge gewichtet.
+    Die Produkte werden summiert.
+    Die Produktsumme wird durch die letzte Stelle des URN dividiert.
+    Die Einerstelle des Quotienten ist die Prüfziffer.
+
+Der Algorithmus von mir setzt auf die ASCII-Reihenfolge und somit auf eine Verweis-auf-Verweis Auflösung:
+
+39 47 45 01 02 03 04 05 06 07 08 09 41 17 ## ## ## ## ## ## 18 14 19 15 16 21 22 23 24 25 42 26 27 13 28 29 31 12 32 33 11 34 35 36 37 38 ## ## ## ## 43
+-   .  /  0  1  2  3  4  5  6  7  8  9  : [ Toter Bereich ]  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z              _ 
+
+
+	
+Beispiel: urn:nbn:de:0183-mbi0003721 - hierbei ist die Prüfziffer 1
+        
+U -> 1,1 ->> 1 *  1 =  1 (Der 2. Multiplikator ist die Gewichtung, die hochgezählt wird)
+             1 *  2 =  2
+R -> 1,2 ->> 1 *  3 =  3
+             2 *  4 =  8
+N -> 1,3 ->> 1 *  5 =  5
+             3 *  6 = 18	
+[...]
+2 ->   3 --> 3 * 29 = 87 
+		            ------
+                    2855
+
+		Zum Ende die Summe durch 3 teilen (letzte Wert) und hiervon die Einerstelle verwenden. 	
+		
+		2855 / 3 = 951.6 --> (951.6 mod 10) = 1
+		
+		
+```
