@@ -1,4 +1,4 @@
-# Einfache URN (Uniform Resource Name) Prüfziffern-Berechnung/Überprüfung in PHP und Javascript
+# Einfache URN (Uniform Resource Name) Prüfziffern-Berechnung für den Namensraum nbn / Überprüfung in PHP und Javascript
 
 USN-Servevice der DNB: [https://www.dnb.de/DE/Professionell/Services/URN-Service/urn-service_node.html](https://www.dnb.de/DE/Professionell/Services/URN-Service/urn-service_node.html)
 
