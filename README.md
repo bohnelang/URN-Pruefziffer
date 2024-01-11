@@ -34,7 +34,7 @@ function calc_urn_checksum(test_urn)
 ```
 
 
-Der Algorithmus ist hier sehr gut beschrieben: [http://www.pruefziffernberechnung.de/U/URN.shtml](http://www.pruefziffernberechnung.de):
+Der Algorithmus ist hier sehr gut beschrieben: [http://www.pruefziffernberechnung.de/U/URN.shtml](http://www.pruefziffernberechnung.de/U/URN.shtml):
 
 ```
 
