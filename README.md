@@ -32,11 +32,12 @@ function calc_urn_checksum(test_urn)
         return Math.floor(sum/v2) % 10;
 }
 ```
+Der Algorithmus zur Bildung der NBN-Prüfziffer im Rahmen des Projektes CARMEN-AP4 „Persistent Identifier and Metadata Management in Science“ stammt von 2001. Inzwischen sind Prüfziffern nicht mehr notwendig. 
 
-
-Der Algorithmus ist hier sehr gut beschrieben: [http://www.pruefziffernberechnung.de/U/URN.shtml](http://www.pruefziffernberechnung.de/U/URN.shtml):
+Das Verfahren ist hier sehr gut beschrieben: [http://www.pruefziffernberechnung.de/U/URN.shtml](http://www.pruefziffernberechnung.de/U/URN.shtml):
 
 ```
+
 
 Umsetzungstabelle Buchstaben und Zahlen nach Zahlen (festgelegt)
 
@@ -81,6 +82,12 @@ Y -> 3,7
 Z -> 3,8
 - -> 3,9
 : -> 1,7
+
+_ -> 4,3 (neu: BSZ)
+/ -> 4,5 (neu: Projekt STD)
+. -> 4,7 (neu: Projekt STD)
++ -> 4,9 (neu: Projekt STD)
+
 
 Nach der Zeichensubstitution kann die Prüfziffer errechnet werden.
 
