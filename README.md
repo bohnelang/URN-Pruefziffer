@@ -23,11 +23,11 @@ function calc_urn_checksum(test_urn)
 {
         //var test_urn='urn:nbn:de:hbz:79pbc-201405121';
         var code='3947450102030405060708094117############1814191516212223242542262713282931123233113435363738########43';
-        for(var i=0,sum=0,pos=1; i<test_urn.length;i++){
+        for(var i=0,sum=0,gewichtung=1; i<test_urn.length;i++){
                 var x=test_urn.toUpperCase().charCodeAt(i)-45;
                 var v1= code.substr(x*2,1);
                 var v2= code.substr(x*2+1,1);
-                sum += (v1==0)?v2*(pos++):v1*(pos++)+v2*(pos++);
+                sum += (v1==0)?v2*(gewichtungs++):v1*(gewichtung++)+v2*(gewichtungs++);
         }
         return Math.floor(sum/v2) % 10;
 }
