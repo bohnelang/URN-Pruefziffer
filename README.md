@@ -27,7 +27,7 @@ function calc_urn_checksum(test_urn)
                 var x=test_urn.toUpperCase().charCodeAt(i)-45;
                 var v1= code.substr(x*2,1);
                 var v2= code.substr(x*2+1,1);
-                sum += (v1==0)?v2*pos++:pos++*v1+v2*pos++;
+                sum += (v1==0)?v2*(pos++):v1*(pos++)+v2*(pos++);
         }
         return Math.floor(sum/v2) % 10;
 }
