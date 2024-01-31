@@ -27,7 +27,7 @@ function calc_urn_checksum(test_urn)
                 var x=test_urn.toUpperCase().charCodeAt(i)-45;
                 var v1= code.substr(x*2,1);
                 var v2= code.substr(x*2+1,1);
-                sum += (v1==0)?v2*(gewichtungs++):v1*(gewichtung++)+v2*(gewichtungs++);
+                sum += (v1==0)?v2*(gewichtung++):v1*(gewichtung++)+v2*(gewichtung++);
         }
         return Math.floor(sum/v2) % 10;
 }
